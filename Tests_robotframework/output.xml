@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1.1 (Python 3.11.3 on win32)" generated="2024-12-24T13:49:10.775248" rpa="false" schemaversion="5">
+<suite id="s1" name="Login Test" source="C:\Users\Niveya\PycharmProjects\Robotframework\Tests_robotframework\login_test.robot">
+<test id="s1-t1" name="Login Test" line="11">
+<kw name="Open Browser to url">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-12-24T13:49:11.112243" level="INFO">Opening browser 'Chrome' to base url 'http://the-internet.herokuapp.com/login'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-12-24T13:49:11.111151" elapsed="8.859433"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-12-24T13:49:19.973176" elapsed="0.031488"/>
+</kw>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<status status="PASS" start="2024-12-24T13:49:11.111151" elapsed="8.893513"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-24T13:49:20.006666" level="INFO">Typing text 'tomsmith' into text field 'id=username'.</msg>
+<arg>id=username</arg>
+<arg>${USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-24T13:49:20.005664" elapsed="0.358232"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-24T13:49:20.366889" level="INFO">Typing text 'SuperSecretPassword!' into text field 'id=password'.</msg>
+<arg>id=password</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-24T13:49:20.366889" elapsed="0.288402"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-12-24T13:49:20.656295" level="INFO">Clicking button 'css=.radius'.</msg>
+<arg>css=.radius</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-24T13:49:20.655291" elapsed="0.979309"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>css=.flash.success</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-12-24T13:49:21.634600" elapsed="0.035751"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-12-24T13:49:21.671272" elapsed="2.263230"/>
+</kw>
+<doc>This test case logs into the example website.</doc>
+<status status="PASS" start="2024-12-24T13:49:11.109637" elapsed="12.825326"/>
+</test>
+<status status="PASS" start="2024-12-24T13:49:10.776259" elapsed="13.160586"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Login Test">Login Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1.1 (Python 3.11.3 on win32)" generated="2024-12-25T18:31:09.512969" rpa="false" schemaversion="5">
+<suite id="s1" name="Getapistructure" source="C:\Users\Niveya\PycharmProjects\Robotframework\api_tests\getapistructure.robot">
+<test id="s1-t1" name="Validate JSON Response Content" line="19">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-12-25T18:31:09.919675" level="INFO">Creating Session using : alias=mysession, url=https://jsonplaceholder.typicode.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>mysession</arg>
+<arg>${BASE_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-12-25T18:31:09.919675" elapsed="0.000000"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2024-12-25T18:31:10.325652" level="INFO">GET Request : url=https://jsonplaceholder.typicode.com/users/1 
+ path_url=/users/1 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2024-12-25T18:31:10.325652" level="INFO">GET Response : url=https://jsonplaceholder.typicode.com/users/1 
+ status=200, reason=OK 
+ headers={'Date': 'Wed, 25 Dec 2024 13:01:09 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1735077088&amp;sid=e11707d5-02a7-43ef-b45e-2cf4d2036f7d&amp;s=nGrL82%2FU%2Btexe9wiIUf9zZ3vXmmskqUK0Oi4EbjFtY0%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1735077088&amp;sid=e11707d5-02a7-43ef-b45e-2cf4d2036f7d&amp;s=nGrL82%2FU%2Btexe9wiIUf9zZ3vXmmskqUK0Oi4EbjFtY0%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'X-Powered-By': 'Express', 'X-Ratelimit-Limit': '1000', 'X-Ratelimit-Remaining': '999', 'X-Ratelimit-Reset': '1735077141', 'Vary': 'Origin, Accept-Encoding', 'Access-Control-Allow-Credentials': 'true', 'Cache-Control': 'max-age=43200', 'Pragma': 'no-cache', 'Expires': '-1', 'X-Content-Type-Options': 'nosniff', 'Etag': 'W/"1fd-+2Y3G3w049iSZtw5t1mzSnunngE"', 'Via': '1.1 vegur', 'CF-Cache-Status': 'HIT', 'Age': '25735', 'Server': 'cloudflare', 'CF-RAY': '8f7904a48a5bf8d6-SIN', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400', 'server-timing': 'cfL4;desc="?proto=TCP&amp;rtt=54470&amp;min_rtt=49006&amp;rtt_var=29305&amp;sent=5&amp;recv=5&amp;lost=0&amp;retrans=0&amp;sent_bytes=2842&amp;recv_bytes=785&amp;delivery_rate=39798&amp;cwnd=252&amp;unsent_bytes=0&amp;cid=78f5f648cb9c34f8&amp;ts=101&amp;x=0"'} 
+ body={
+  "id": 1,
+  "name": "Leanne Graham",
+  "username": "Bret",
+  "email": "Sincere@april.biz",
+  "address": {
+    "street": "Kulas Light",
+    "suite": "Apt. 556",
+    "city": "Gwenborough",
+    "zipcode": "92998-3874",
+    "geo": {
+      "lat": "-37.3159",
+      "lng": "81.1496"
+    }
+  },
+  "phone": "1-770-736-8031 x56442",
+  "website": "hildegard.org",
+  "company": {
+    "name": "Romaguera-Crona",
+    "catchPhrase": "Multi-layered client-server neural-net",
+    "bs": "harness real-time e-markets"
+  }
+} 
+ </msg>
+<msg time="2024-12-25T18:31:10.325652" level="INFO">C:\Users\Niveya\PycharmProjects\Robotframework\venv\Lib\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'jsonplaceholder.typicode.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2024-12-25T18:31:10.326652" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>mysession</arg>
+<arg>${ENDPOINT}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-12-25T18:31:09.919675" elapsed="0.406977"/>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2024-12-25T18:31:10.327655" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2024-12-25T18:31:10.326652" elapsed="0.001003"/>
+</kw>
+<kw name="To Json" owner="RequestsLibrary">
+<msg time="2024-12-25T18:31:10.328166" level="WARN">Keyword 'RequestsLibrary.To Json' is deprecated. Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</msg>
+<msg time="2024-12-25T18:31:10.329174" level="INFO">To JSON using : content={
+  "id": 1,
+  "name": "Leanne Graham",
+  "username": "Bret",
+  "email": "Sincere@april.biz",
+  "address": {
+    "street": "Kulas Light",
+    "suite": "Apt. 556",
+    "city": "Gwenborough",
+    "zipcode": "92998-3874",
+    "geo": {
+      "lat": "-37.3159",
+      "lng": "81.1496"
+    }
+  },
+  "phone": "1-770-736-8031 x56442",
+  "website": "hildegard.org",
+  "company": {
+    "name": "Romaguera-Crona",
+    "catchPhrase": "Multi-layered client-server neural-net",
+    "bs": "harness real-time e-markets"
+  }
+} </msg>
+<msg time="2024-12-25T18:31:10.329174" level="INFO">To JSON using : pretty_print=False </msg>
+<msg time="2024-12-25T18:31:10.329174" level="INFO">${response_json} = {'id': 1, 'name': 'Leanne Graham', 'username': 'Bret', 'email': 'Sincere@april.biz', 'address': {'street': 'Kulas Light', 'suite': 'Apt. 556', 'city': 'Gwenborough', 'zipcode': '92998-3874', 'geo': {'...</msg>
+<var>${response_json}</var>
+<arg>${response.content}</arg>
+<doc>*DEPRECATED* Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</doc>
+<status status="PASS" start="2024-12-25T18:31:10.328166" elapsed="0.001008"/>
+</kw>
+<kw name="Validate Name">
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2024-12-25T18:31:10.329174" level="INFO">${actual_name} = Leanne Graham</msg>
+<var>${actual_name}</var>
+<arg>${response_json}</arg>
+<arg>name</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2024-12-25T18:31:10.329174" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${actual_name}</arg>
+<arg>${expected_name}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-12-25T18:31:10.329174" elapsed="0.001098"/>
+</kw>
+<arg>${response_json}</arg>
+<arg>${EXPECTED_NAME}</arg>
+<status status="PASS" start="2024-12-25T18:31:10.329174" elapsed="0.001098"/>
+</kw>
+<kw name="Validate Email">
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2024-12-25T18:31:10.330272" level="INFO">${actual_email} = Sincere@april.biz</msg>
+<var>${actual_email}</var>
+<arg>${response_json}</arg>
+<arg>email</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2024-12-25T18:31:10.330272" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${actual_email}</arg>
+<arg>${expected_email}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-12-25T18:31:10.330272" elapsed="0.000998"/>
+</kw>
+<arg>${response_json}</arg>
+<arg>${EXPECTED_EMAIL}</arg>
+<status status="PASS" start="2024-12-25T18:31:10.330272" elapsed="0.000998"/>
+</kw>
+<kw name="Validate Address Content">
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2024-12-25T18:31:10.332274" level="INFO">${address} = {'street': 'Kulas Light', 'suite': 'Apt. 556', 'city': 'Gwenborough', 'zipcode': '92998-3874', 'geo': {'lat': '-37.3159', 'lng': '81.1496'}}</msg>
+<var>${address}</var>
+<arg>${response_json}</arg>
+<arg>address</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2024-12-25T18:31:10.332274" elapsed="0.000000"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2024-12-25T18:31:10.332274" level="INFO">${actual_city} = Gwenborough</msg>
+<var>${actual_city}</var>
+<arg>${address}</arg>
+<arg>city</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2024-12-25T18:31:10.332274" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${actual_city}</arg>
+<arg>${EXPECTED_CITY}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-12-25T18:31:10.333271" elapsed="0.000000"/>
+</kw>
+<arg>${response_json}</arg>
+<status status="PASS" start="2024-12-25T18:31:10.331270" elapsed="0.002001"/>
+</kw>
+<kw name="Validate Geo Content">
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2024-12-25T18:31:10.345778" level="FAIL">Variable '${address}' not found.</msg>
+<var>${geo}</var>
+<arg>${address}</arg>
+<arg>geo</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="FAIL" start="2024-12-25T18:31:10.344866" elapsed="0.000912">Variable '${address}' not found.</status>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<var>${actual_lat}</var>
+<arg>${geo}</arg>
+<arg>lat</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="NOT RUN" start="2024-12-25T18:31:10.345778" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${actual_lat}</arg>
+<arg>${EXPECTED_LAT}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="NOT RUN" start="2024-12-25T18:31:10.345778" elapsed="0.000000"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<var>${actual_lng}</var>
+<arg>${geo}</arg>
+<arg>lng</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="NOT RUN" start="2024-12-25T18:31:10.345778" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${actual_lng}</arg>
+<arg>${EXPECTED_LNG}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="NOT RUN" start="2024-12-25T18:31:10.345778" elapsed="0.000000"/>
+</kw>
+<arg>${response_json}</arg>
+<status status="FAIL" start="2024-12-25T18:31:10.333271" elapsed="0.012507">Variable '${address}' not found.</status>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>JSON response content validation passed.</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2024-12-25T18:31:10.346783" elapsed="0.000000"/>
+</kw>
+<doc>Validate the content of the JSON response (string, integer, object, arrays).</doc>
+<status status="FAIL" start="2024-12-25T18:31:09.919675" elapsed="0.427108">Variable '${address}' not found.</status>
+</test>
+<status status="FAIL" start="2024-12-25T18:31:09.512969" elapsed="0.834812"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Getapistructure">Getapistructure</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2024-12-25T18:31:10.328166" level="WARN">Keyword 'RequestsLibrary.To Json' is deprecated. Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</msg>
+</errors>
+</robot>
